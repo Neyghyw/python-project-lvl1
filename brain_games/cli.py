@@ -7,6 +7,7 @@ def game_template(game, chances=None):
     print('Welcome to the Brain Games!')
     user_name = prompt.string("May i have your name? ")
     print(f'Hello, {user_name}!')
+    
     print_rules(game)
 
     wins, loses = 0, 0
