@@ -6,6 +6,8 @@ def get_question_and_answer(game):
         return calc_get_question_and_answer()
     elif game == "brain_even":
         return even_get_question_and_answer()
+    elif game == "brain_gcd":
+        return gcd_get_question_and_answer()
 
 
 def calc_get_question_and_answer():
@@ -18,8 +20,21 @@ def calc_get_question_and_answer():
 
 
 def even_get_question_and_answer():
-    question = random.randint(1, 100)
+    question = str(random.randint(1, 100))
     answer = (question % 2 == 0 and "yes") or "no"
+    return question, answer
+
+
+def gcd_get_question_and_answer():
+    value1 = random.randint(1, 100)
+    value2 = random.randint(1, 100)
+    question = f'{value1} {value2}'
+    answer = 1
+    nod_range = range(min(value1, value2), 0, -1)
+    for num in nod_range:
+        if value1 % num == 0 and value2 % num == 0:
+            answer = str(num)
+            break
     return question, answer
 
 
