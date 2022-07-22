@@ -8,6 +8,8 @@ def get_question_and_answer(game):
         return even_get_question_and_answer()
     elif game == "brain_gcd":
         return gcd_get_question_and_answer()
+    elif game == "brain_progression":
+        return progression_get_question_and_answer()
 
 
 def calc_get_question_and_answer():
@@ -38,6 +40,19 @@ def gcd_get_question_and_answer():
     return question, answer
 
 
+def progression_get_question_and_answer():
+    start = random.randint(1, 50)
+    step = random.randint(1, 10)
+    last_num = start + step * (10 - 1)
+    question = ''
+    for num in range(start, last_num, step):
+        question += f'{num} '
+    tup = question.rstrip().split(' ')
+    answer = random.choice(tup)
+    question = question.replace(answer, "..", 1)
+    return question, answer
+
+
 def print_rules(game):
     if game == "brain_calc":
         print('What is the result of the expression?')
@@ -45,6 +60,8 @@ def print_rules(game):
         print('Answer "yes" if the number is even, otherwise answer "no".')
     elif game == "brain_gcd":
         print('Find the greatest common divisor of given numbers.')
+    elif game == "brain_progression":
+        print('What number is missing in the progression?')
 
 
 if __name__ == '__main__':
