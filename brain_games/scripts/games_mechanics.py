@@ -22,9 +22,9 @@ def calc_get_question_and_answer():
 
 
 def even_get_question_and_answer():
-    question = str(random.randint(1, 100))
+    question = random.randint(1, 100)
     answer = (question % 2 == 0 and "yes") or "no"
-    return question, answer
+    return str(question), answer
 
 
 def gcd_get_question_and_answer():
