@@ -5,5 +5,5 @@
 <a href="https://codeclimate.com/github/Neyghyw/python-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/6b23f2878fd68f97a2b7/maintainability" /></a>
 
 ### Asciinema record:
-<a href="https://asciinema.org/a/b1pG0wTyi0ime2xk8CbScb3no"><img
+<a href="https://asciinema.org/a/jBzv5CMAUHlTC7X82SHs61Xm8"><img
 src="https://badgen.net/badge/icon/awesome?icon=awesome&label" /></a>
