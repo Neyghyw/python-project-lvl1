@@ -16,3 +16,6 @@ publish: # Отладка публикации проекта как пакет�
 
 package-install: # Установка пакета на компьютер
 	python3 -m pip install --user dist/*.whl
+
+make-lint:
+	poetry run flake8 brain_games
