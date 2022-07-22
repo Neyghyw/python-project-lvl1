@@ -43,6 +43,8 @@ def print_rules(game):
         print('What is the result of the expression?')
     elif game == "brain_even":
         print('Answer "yes" if the number is even, otherwise answer "no".')
+    elif game == "brain_gcd":
+        print('Find the greatest common divisor of given numbers.')
 
 
 if __name__ == '__main__':
