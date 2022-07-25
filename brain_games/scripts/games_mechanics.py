@@ -1,20 +1,36 @@
 import random
 
 
-def get_question_and_answer(game):
-    if game == "brain_calc":
+def get_question_and_answer(game_name: str) -> (str, str):
+    if game_name == "brain_calc":
         return calc_get_question_and_answer()
-    elif game == "brain_even":
+    elif game_name == "brain_even":
         return even_get_question_and_answer()
-    elif game == "brain_gcd":
+    elif game_name == "brain_gcd":
         return gcd_get_question_and_answer()
-    elif game == "brain_progression":
+    elif game_name == "brain_progression":
         return progression_get_question_and_answer()
-    elif game == "brain_prime":
+    elif game_name == "brain_prime":
         return prime_get_question_and_answer()
 
 
-def calc_get_question_and_answer():
+def even_get_question_and_answer() -> (str, str):
+    question = random.randint(1, 100)
+    answer = (question % 2 == 0 and "yes") or "no"
+    return str(question), answer
+
+
+def prime_get_question_and_answer() -> (str, str):
+    question = random.randint(1, 250)
+    answer = 'yes'
+    for i in range(2, question):
+        if question % i == 0:
+            answer = 'no'
+            break
+    return str(question), answer
+
+
+def calc_get_question_and_answer() -> (str, str):
     value1 = random.randint(1, 100)
     value2 = random.randint(1, 100)
     operator = random.choice("+-*")
@@ -23,45 +39,30 @@ def calc_get_question_and_answer():
     return question, answer
 
 
-def even_get_question_and_answer():
-    question = random.randint(1, 100)
-    answer = (question % 2 == 0 and "yes") or "no"
-    return str(question), answer
-
-
-def gcd_get_question_and_answer():
+def gcd_get_question_and_answer() -> (str, str):
     value1 = random.randint(1, 100)
     value2 = random.randint(1, 100)
-    question = f'{value1} {value2}'
+    start_position = min(value1, value2)
+    nod_range = range(start_position, 0, -1)
     answer = 1
-    nod_range = range(min(value1, value2), 0, -1)
     for num in nod_range:
         if value1 % num == 0 and value2 % num == 0:
             answer = str(num)
             break
+    question = f'{value1} {value2}'
     return question, answer
 
 
-def progression_get_question_and_answer():
-    start = random.randint(1, 50)
-    step = random.randint(1, 10)
-    last_num = start + step * (10 - 1)
+def progression_get_question_and_answer() -> (str, str):
+    progression_step = random.randint(1, 10)
+    first_num = random.randint(1, 50)
+    last_num = first_num + progression_step * (10 - 1)
     question = ''
-    for num in range(start, last_num, step):
+    for num in range(first_num, last_num, progression_step):
         question += f'{num} '
-    tup = question.rstrip().split(' ')
-    answer = random.choice(tup)
+    progression_tuple = question.rstrip().split(' ')
+    answer = random.choice(progression_tuple)
     question = question.replace(answer, "..", 1)
-    return question, answer
-
-
-def prime_get_question_and_answer():
-    question = random.randint(1, 250)
-    answer = 'yes'
-    for i in range(2, question):
-        if question % i == 0:
-            answer = 'no'
-            break
     return question, answer
 
 

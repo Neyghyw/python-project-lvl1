@@ -3,7 +3,7 @@ from brain_games.scripts.games_mechanics import get_question_and_answer
 from brain_games.scripts.games_mechanics import print_rules
 
 
-def game_start_introduction(game):
+def game_start_introduction(game: str) -> str:
     print('Welcome to the Brain Games!')
     user_name = prompt.string("May i have your name? ")
     print(f'Hello, {user_name}!')
@@ -11,26 +11,26 @@ def game_start_introduction(game):
     return user_name
 
 
-def game_play(game_name, attempts=-1):
+def game_play(game_name: str, attempts: int = -1) -> bool:
     wins = 0
     while wins < 3:
-        if attempts == 0:
-            return False
-        question, true_answer = get_question_and_answer(game_name)
+        question, true_answer = get_question_and_answer(game_name=game_name)
         print(f'Question: {question}')
         user_answer = prompt.string("Your answer: ")
         if user_answer == true_answer:
             wins += 1
             print('Correct!')
         else:
-            wins = 0
             attempts -= 1
+            wins = 0
             print(f"'{user_answer}' is wrong answer ;(."
                   f" Correct answer was '{true_answer}'.")
+        if attempts == 0:
+            return False
     return True
 
 
-def game_end(user_name, win):
+def game_end(user_name: str, win: bool):
     if win:
         print(f"Congratulations, {user_name}!")
     else:
