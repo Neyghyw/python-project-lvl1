@@ -9,7 +9,7 @@ def get_question_and_answer(game_name: str) -> (str, str):
         'brain_progression': progression_get_question_and_answer(),
         'brain_prime': prime_get_question_and_answer()
     }
-    return question_and_answer
+    return question_and_answer.get(game_name)
 
 
 def even_get_question_and_answer() -> (str, str):
