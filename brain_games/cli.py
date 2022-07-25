@@ -3,19 +3,20 @@ from brain_games.scripts.games_mechanics import get_question_and_answer
 from brain_games.scripts.games_mechanics import print_rules
 
 
-def game_template(game, chances=None):
+def game_start_introduction(game):
     print('Welcome to the Brain Games!')
     user_name = prompt.string("May i have your name? ")
     print(f'Hello, {user_name}!')
-    
     print_rules(game)
+    return user_name
 
-    wins, loses = 0, 0
+
+def game_play(game_name, attempts=-1):
+    wins = 0
     while wins < 3:
-        if loses == chances:
-            print(f"Let's try again, {user_name}!")
-            break
-        question, true_answer = get_question_and_answer(game)
+        if attempts == 0:
+            return False
+        question, true_answer = get_question_and_answer(game_name)
         print(f'Question: {question}')
         user_answer = prompt.string("Your answer: ")
         if user_answer == true_answer:
@@ -23,12 +24,17 @@ def game_template(game, chances=None):
             print('Correct!')
         else:
             wins = 0
-            loses += 1
+            attempts -= 1
             print(f"'{user_answer}' is wrong answer ;(."
                   f" Correct answer was '{true_answer}'.")
+    return True
 
-    if wins == 3:
+
+def game_end(user_name, win):
+    if win:
         print(f"Congratulations, {user_name}!")
+    else:
+        print(f"Let's try again, {user_name}!")
 
 
 if __name__ == '__main__':

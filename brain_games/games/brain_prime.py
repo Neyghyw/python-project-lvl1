@@ -4,7 +4,7 @@ from brain_games.cli import game_end
 
 
 def main():
-    game = "brain_even"
+    game = "brain_prime"
     user_name = game_start_introduction(game=game)
     result = game_play(game_name=game)
     game_end(user_name=user_name, win=result)

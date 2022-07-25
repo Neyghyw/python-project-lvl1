@@ -10,6 +10,8 @@ def get_question_and_answer(game):
         return gcd_get_question_and_answer()
     elif game == "brain_progression":
         return progression_get_question_and_answer()
+    elif game == "brain_prime":
+        return prime_get_question_and_answer()
 
 
 def calc_get_question_and_answer():
@@ -53,6 +55,16 @@ def progression_get_question_and_answer():
     return question, answer
 
 
+def prime_get_question_and_answer():
+    question = random.randint(1, 250)
+    answer = 'yes'
+    for i in range(2, question):
+        if question % i == 0:
+            answer = 'no'
+            break
+    return question, answer
+
+
 def print_rules(game):
     if game == "brain_calc":
         print('What is the result of the expression?')
@@ -62,6 +74,8 @@ def print_rules(game):
         print('Find the greatest common divisor of given numbers.')
     elif game == "brain_progression":
         print('What number is missing in the progression?')
+    elif game == "brain_prime":
+        print('Answer "yes" if given number is prime. Otherwise answer "no"')
 
 
 if __name__ == '__main__':
