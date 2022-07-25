@@ -3,15 +3,16 @@ import random
 
 def get_question_and_answer(game_name: str) -> (str, str):
     if game_name == "brain_calc":
-        return calc_get_question_and_answer()
+        question, answer = calc_get_question_and_answer()
     elif game_name == "brain_even":
-        return even_get_question_and_answer()
+        question, answer = even_get_question_and_answer()
     elif game_name == "brain_gcd":
-        return gcd_get_question_and_answer()
+        question, answer = gcd_get_question_and_answer()
     elif game_name == "brain_progression":
-        return progression_get_question_and_answer()
-    elif game_name == "brain_prime":
-        return prime_get_question_and_answer()
+        question, answer = progression_get_question_and_answer()
+    else:
+        question, answer = prime_get_question_and_answer()
+    return question, answer
 
 
 def even_get_question_and_answer() -> (str, str):
