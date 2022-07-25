@@ -3,11 +3,11 @@ from brain_games.scripts.games_mechanics import get_question_and_answer
 from brain_games.scripts.games_mechanics import print_rules
 
 
-def game_start_introduction(game: str) -> str:
+def game_start_introduction(game_name: str) -> str:
     print('Welcome to the Brain Games!')
     user_name = prompt.string("May i have your name? ")
     print(f'Hello, {user_name}!')
-    print_rules(game)
+    print_rules(game_name)
     return user_name
 
 

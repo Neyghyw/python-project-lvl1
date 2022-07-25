@@ -1,13 +1,8 @@
-from brain_games.cli import game_play
-from brain_games.cli import game_start_introduction
-from brain_games.cli import game_end
+from brain_games.scripts.game_starter import play
 
 
 def main():
-    game = "brain_progression"
-    user_name = game_start_introduction(game=game)
-    result = game_play(game_name=game, attempts=1)
-    game_end(user_name=user_name, win=result)
+    play(game_name="brain_progression", attempts=1)
 
 
 if __name__ == "__main__":
