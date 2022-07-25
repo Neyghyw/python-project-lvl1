@@ -2,17 +2,14 @@ import random
 
 
 def get_question_and_answer(game_name: str) -> (str, str):
-    if game_name == "brain_calc":
-        question, answer = calc_get_question_and_answer()
-    elif game_name == "brain_even":
-        question, answer = even_get_question_and_answer()
-    elif game_name == "brain_gcd":
-        question, answer = gcd_get_question_and_answer()
-    elif game_name == "brain_progression":
-        question, answer = progression_get_question_and_answer()
-    else:
-        question, answer = prime_get_question_and_answer()
-    return question, answer
+    question_and_answer = {
+        'brain_calc': calc_get_question_and_answer(),
+        'brain_even': even_get_question_and_answer(),
+        'brain_gcd': gcd_get_question_and_answer(),
+        'brain_progression': progression_get_question_and_answer(),
+        'brain_prime': prime_get_question_and_answer()
+    }
+    return question_and_answer
 
 
 def even_get_question_and_answer() -> (str, str):
