@@ -25,7 +25,7 @@ def game_play(game_name: str) -> bool:
     wins = 0
     attempts = attempts_dict.get(game_name)
     while wins < 3:
-        question, true_answer = question_and_answer.get(game_name)()
+        question, true_answer = get_question_and_answer(game_name)
         print(f'Question: {question}')
         user_answer = prompt.string("Your answer: ")
         if user_answer == true_answer:
@@ -54,13 +54,15 @@ rules = {
 }
 
 
-question_and_answer = {
-    'brain-calc': calc_get_question_and_answer,
-    'brain-even': even_get_question_and_answer,
-    'brain-gcd': gcd_get_question_and_answer,
-    'brain-progression': progression_get_question_and_answer,
-    'brain-prime': prime_get_question_and_answer
-}
+def get_question_and_answer(game_name):
+    question_and_answer = {
+        'brain-calc': calc_get_question_and_answer,
+        'brain-even': even_get_question_and_answer,
+        'brain-gcd': gcd_get_question_and_answer,
+        'brain-progression': progression_get_question_and_answer,
+        'brain-prime': prime_get_question_and_answer
+    }
+    return question_and_answer.get(game_name)()
 
 
 attempts_dict = {
