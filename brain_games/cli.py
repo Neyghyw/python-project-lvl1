@@ -51,11 +51,11 @@ rules = {
 
 
 question_and_answer = {
-        'brain-calc': calc_get_question_and_answer,
-        'brain-even': even_get_question_and_answer,
-        'brain-gcd': gcd_get_question_and_answer,
-        'brain-progression': progression_get_question_and_answer,
-        'brain-prime': prime_get_question_and_answer
+        'brain-calc': calc_get_question_and_answer(),
+        'brain-even': even_get_question_and_answer(),
+        'brain-gcd': gcd_get_question_and_answer(),
+        'brain-progression': progression_get_question_and_answer(),
+        'brain-prime': prime_get_question_and_answer()
     }
 
 attempts_dict = {
