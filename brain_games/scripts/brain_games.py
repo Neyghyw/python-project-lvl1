@@ -4,7 +4,7 @@ import prompt
 
 def main():
     print('Welcome to the Brain Games!')
-    user_name = prompt.string(prompt='May i have your name? ')
+    user_name = prompt.string(prompt='May I have your name? ')
     print(f'Hello, {user_name}!')
 
 
