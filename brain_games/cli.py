@@ -1,9 +1,18 @@
 import prompt
-from brain_games.games.brain_calc import calc_get_question_and_answer
-from brain_games.games.brain_gcd import gcd_get_question_and_answer
-from brain_games.games.brain_even import even_get_question_and_answer
-from brain_games.games.brain_progression import progression_get_question_and_answer
-from brain_games.games.brain_prime import prime_get_question_and_answer
+from brain_games.utils.brain_gcd import gcd_get_question_and_answer
+from brain_games.utils.brain_prime import prime_get_question_and_answer
+from brain_games.utils.brain_calc import calc_get_question_and_answer
+from brain_games.utils.brain_progression import progression_get_question_and_answer
+from brain_games.utils.brain_even import even_get_question_and_answer
+
+
+question_and_answer = {
+    'brain-calc': calc_get_question_and_answer,
+    'brain-even': even_get_question_and_answer,
+    'brain-gcd': gcd_get_question_and_answer,
+    'brain-progression': progression_get_question_and_answer,
+    'brain-prime': prime_get_question_and_answer
+}
 
 
 def game_start_introduction(game_name: str) -> str:
@@ -25,7 +34,7 @@ def game_play(game_name: str) -> bool:
     wins = 0
     attempts = attempts_dict.get(game_name)
     while wins < 3:
-        question, true_answer = get_question_and_answer(game_name)
+        question, true_answer = question_and_answer[game_name]()
         print(f'Question: {question}')
         user_answer = prompt.string("Your answer: ")
         if user_answer == true_answer:
@@ -46,15 +55,7 @@ if __name__ == '__main__':
     pass
 
 
-def get_question_and_answer(game_name: str) -> (str, str):
-    question_and_answer = {
-        'brain-calc': calc_get_question_and_answer(),
-        'brain-even': even_get_question_and_answer(),
-        'brain-gcd': gcd_get_question_and_answer(),
-        'brain-progression': progression_get_question_and_answer(),
-        'brain-prime': prime_get_question_and_answer()
-    }
-    return question_and_answer.get(game_name)
+
 
 
 rules = {

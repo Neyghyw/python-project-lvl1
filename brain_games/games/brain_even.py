@@ -1,11 +1,14 @@
-import random
+from brain_games.cli import game_start_introduction
+from brain_games.cli import game_play
+from brain_games.cli import game_exit
 
 
-def even_get_question_and_answer() -> (str, str):
-    question = random.randint(1, 100)
-    answer = (question % 2 == 0 and "yes") or "no"
-    return str(question), answer
+def main():
+    user_name = game_start_introduction(game_name='brain-even')
+    result = game_play(game_name='brain-even')
+    game_exit(user_name=user_name, win=result)
 
 
 if __name__ == "__main__":
     pass
+

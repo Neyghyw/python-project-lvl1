@@ -1,14 +1,12 @@
-import random
+from brain_games.cli import game_start_introduction
+from brain_games.cli import game_play
+from brain_games.cli import game_exit
 
 
-def prime_get_question_and_answer() -> (str, str):
-    question = random.randint(1, 250)
-    answer = 'yes'
-    for i in range(2, question):
-        if question % i == 0:
-            answer = 'no'
-            break
-    return str(question), answer
+def main():
+    user_name = game_start_introduction(game_name='brain-calc')
+    result = game_play(game_name='brain-calc')
+    game_exit(user_name=user_name, win=result)
 
 
 if __name__ == "__main__":
