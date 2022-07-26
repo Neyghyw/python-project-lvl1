@@ -1,6 +1,9 @@
 import random
 
 
+rules = 'Answer "yes" if given number is prime. Otherwise answer "no"'
+
+
 def prime_get_question_and_answer() -> (str, str):
     question = random.randint(1, 250)
     answer = 'yes'

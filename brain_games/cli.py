@@ -1,18 +1,12 @@
 import prompt
-from brain_games.utils.brain_gcd import gcd_get_question_and_answer
-from brain_games.utils.brain_prime import prime_get_question_and_answer
-from brain_games.utils.brain_calc import calc_get_question_and_answer
-from brain_games.utils.brain_progression import progression_get_question_and_answer
-from brain_games.utils.brain_even import even_get_question_and_answer
+from brain_games.utils.utils import rules
+from brain_games.utils.utils import question_and_answer
 
 
-question_and_answer = {
-    'brain-calc': calc_get_question_and_answer,
-    'brain-even': even_get_question_and_answer,
-    'brain-gcd': gcd_get_question_and_answer,
-    'brain-progression': progression_get_question_and_answer,
-    'brain-prime': prime_get_question_and_answer
-}
+def game_template_start(game_name: str):
+    user_name = game_start_introduction(game_name=game_name)
+    result = game_play(game_name=game_name)
+    game_exit(user_name=user_name, win=result)
 
 
 def game_start_introduction(game_name: str) -> str:
@@ -48,15 +42,3 @@ def game_play(game_name: str) -> bool:
 
 if __name__ == '__main__':
     pass
-
-
-rules = {
-    "brain-calc": 'What is the result of the expression?',
-    "brain-even": 'Answer "yes" if the number is even, otherwise answer "no".',
-    "brain-gcd": 'Find the greatest common divisor of given numbers.',
-    "brain-progression": 'What number is missing in the progression?',
-    "brain-prime": 'Answer "yes" if given number is prime. Otherwise answer "no"'
-}
-
-
-

@@ -1,14 +1,9 @@
-from brain_games.cli import game_start_introduction
-from brain_games.cli import game_play
-from brain_games.cli import game_exit
+from brain_games.cli import game_template_start
 
 
 def main():
-    user_name = game_start_introduction(game_name='brain-even')
-    result = game_play(game_name='brain-even')
-    game_exit(user_name=user_name, win=result)
+    game_template_start("brain-even")
 
 
 if __name__ == "__main__":
     pass
-

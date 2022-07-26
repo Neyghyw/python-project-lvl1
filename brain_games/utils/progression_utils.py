@@ -1,5 +1,7 @@
 import random
 
+rules = 'What number is missing in the progression?'
+
 
 def progression_get_question_and_answer() -> (str, str):
     progression_step = random.randint(1, 10)
@@ -12,4 +14,3 @@ def progression_get_question_and_answer() -> (str, str):
     answer = random.choice(progression_tuple)
     question = question.replace(answer, "..", 1)
     return question, answer
-
