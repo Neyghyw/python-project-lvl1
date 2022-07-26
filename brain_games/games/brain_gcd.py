@@ -1,9 +1,19 @@
-from brain_games.scripts.game_starter import play
+import random
 
 
-def main():
-    play(game_name="brain_gcd", attempts=1)
+def gcd_get_question_and_answer() -> (str, str):
+    value1 = random.randint(1, 100)
+    value2 = random.randint(1, 100)
+    start_position = min(value1, value2)
+    nod_range = range(start_position, 0, -1)
+    answer = 1
+    for num in nod_range:
+        if value1 % num == 0 and value2 % num == 0:
+            answer = str(num)
+            break
+    question = f'{value1} {value2}'
+    return question, answer
 
 
 if __name__ == "__main__":
-    main()
+    pass
