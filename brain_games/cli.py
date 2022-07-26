@@ -55,9 +55,6 @@ if __name__ == '__main__':
     pass
 
 
-
-
-
 rules = {
     "brain-calc": 'What is the result of the expression?',
     "brain-even": 'Answer "yes" if the number is even, otherwise answer "no".',
@@ -71,7 +68,7 @@ attempts_dict = {
     'brain-gcd': 1,
     'brain-progression': 1,
     'brain-calc': None,
-    'brain-even': None,
+    'brain-even': 1,
     'brain-prime': None
 }
 
