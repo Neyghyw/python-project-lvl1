@@ -8,7 +8,7 @@ from brain_games.games.brain_prime import prime_get_question_and_answer
 
 def game_start_introduction(game_name: str) -> str:
     print('Welcome to the Brain Games!')
-    user_name = prompt.string("May i have your name? ")
+    user_name = prompt.string("May I have your name? ")
     print(f'Hello, {user_name}!')
     print(rules.get(game_name))
     return user_name
