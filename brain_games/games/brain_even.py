@@ -1,4 +1,4 @@
-from brain_games.cli import game_template_start
+from brain_games.engine import game_template_start
 
 
 def main():

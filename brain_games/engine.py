@@ -30,13 +30,12 @@ def game_play(game_name: str) -> bool:
         question, true_answer = question_and_answer[game_name]()
         print(f'Question: {question}')
         user_answer = prompt.string("Your answer: ")
-        if user_answer == true_answer:
-            wins += 1
-            print('Correct!')
-        else:
+        if not user_answer == true_answer:
             print(f"'{user_answer}' is wrong answer ;(."
                   f" Correct answer was '{true_answer}'.")
             return False
+        wins += 1
+        print('Correct!')
     return True
 
 

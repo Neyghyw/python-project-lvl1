@@ -3,6 +3,13 @@ name = "hexlet-code"
 version = "0.1.0"
 description = ""
 authors = ["Nickolay Kuzmin <nickolay.kuzmin2001@gmail.com>"]
+description = "Brain Games. 5 games for your brains: Even, Calculator, GCD, Progression, Prime"
+repository = "https://github.com/Neyghyw/python-project-lvl1"
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
 packages = [
 	{include = "brain_games"},
 ]
@@ -19,7 +26,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-brain-games = "brain_games.scripts.brain_games:main"
+brain-games = "brain_games.games.brain_games:main"
 brain-even = "brain_games.games.brain_even:main"
 brain-calc = "brain_games.games.brain_calc:main"
 brain-gcd = "brain_games.games.brain_gcd:main"
