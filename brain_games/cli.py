@@ -32,7 +32,8 @@ def game_play(game_name: str) -> bool:
             wins += 1
             print('Correct!')
         else:
-            attempts -= 1
+            if attempts is not None:
+                attempts -= 1
             wins = 0
             print(f"'{user_answer}' is wrong answer ;(."
                   f" Correct answer was '{true_answer}'.")
@@ -45,6 +46,17 @@ if __name__ == '__main__':
     pass
 
 
+def get_question_and_answer(game_name: str) -> (str, str):
+    question_and_answer = {
+        'brain-calc': calc_get_question_and_answer(),
+        'brain-even': even_get_question_and_answer(),
+        'brain-gcd': gcd_get_question_and_answer(),
+        'brain-progression': progression_get_question_and_answer(),
+        'brain-prime': prime_get_question_and_answer()
+    }
+    return question_and_answer.get(game_name)
+
+
 rules = {
     "brain-calc": 'What is the result of the expression?',
     "brain-even": 'Answer "yes" if the number is even, otherwise answer "no".',
@@ -54,27 +66,12 @@ rules = {
 }
 
 
-def get_question_and_answer(game_name):
-    question, answer = '', ''
-    if game_name == 'brain-calc':
-        question, answer = calc_get_question_and_answer()
-    if game_name == 'brain-gcd':
-        question, answer = gcd_get_question_and_answer()
-    if game_name == 'brain-even':
-        question, answer = even_get_question_and_answer()
-    if game_name == 'brain-progression':
-        question, answer = progression_get_question_and_answer()
-    if game_name == 'brain-prime':
-        question, answer = prime_get_question_and_answer()
-    return question, answer
-
-
 attempts_dict = {
     'brain-gcd': 1,
     'brain-progression': 1,
-    'brain-calc': -1,
-    'brain-even': -1,
-    'brain-prime': -1
+    'brain-calc': None,
+    'brain-even': None,
+    'brain-prime': None
 }
 
 
