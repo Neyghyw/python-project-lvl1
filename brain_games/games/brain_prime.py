@@ -4,8 +4,8 @@ from brain_games.cli import game_exit
 
 
 def main():
-    user_name = game_start_introduction(game_name='brain-calc')
-    result = game_play(game_name='brain-calc')
+    user_name = game_start_introduction(game_name='brain-prime')
+    result = game_play(game_name='brain-prime')
     game_exit(user_name=user_name, win=result)
 
 
