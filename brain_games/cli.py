@@ -67,7 +67,7 @@ rules = {
 attempts_dict = {
     'brain-gcd': 1,
     'brain-progression': 1,
-    'brain-calc': None,
+    'brain-calc': 1,
     'brain-even': 1,
     'brain-prime': None
 }
