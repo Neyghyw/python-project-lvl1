@@ -25,7 +25,7 @@ def game_play(game_name: str) -> bool:
     wins = 0
     attempts = attempts_dict.get(game_name)
     while wins < 3:
-        question, true_answer = question_and_answer[game_name]()
+        question, true_answer = question_and_answer.get(game_name)()
         print(f'Question: {question}')
         user_answer = prompt.string("Your answer: ")
         if user_answer == true_answer:
