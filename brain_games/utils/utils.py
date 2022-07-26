@@ -15,9 +15,9 @@ question_and_answer = {
 
 
 rules = {
-    'brain-calc': calc_utils.rules,
-    'brain-even': even_utils.rules,
-    'brain-gcd': gcd_utils.rules,
-    'brain-progression': progression_utils.rules,
-    'brain-prime': prime_utils.rules
+    'brain-calc': calc_utils.RULES,
+    'brain-even': even_utils.RULES,
+    'brain-gcd': gcd_utils.RULES,
+    'brain-progression': progression_utils.RULES,
+    'brain-prime': prime_utils.RULES
 }
