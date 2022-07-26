@@ -18,7 +18,7 @@ def game_play(game_name: str) -> bool:
     wins = 0
     attempts = attempts_dict[game_name]
     while wins < 3:
-        question, true_answer = question_and_answer[game_name]()
+        question, true_answer = get_question_and_answer(game_name=game_name)
         print(f'Question: {question}')
         user_answer = prompt.string("Your answer: ")
         if user_answer == true_answer:
@@ -41,22 +41,20 @@ def game_exit(user_name: str, win: bool):
         print(f"Let's try again, {user_name}!")
 
 
-rules = {
-    "brain-calc": 'What is the result of the expression?',
-    "brain-even": 'Answer "yes" if the number is even, otherwise answer "no".',
-    "brain-gcd": 'Find the greatest common divisor of given numbers.',
-    "brain-progression": 'What number is missing in the progression?',
-    "brain-prime": 'Answer "yes" if given number is prime. Otherwise answer "no"'
-}
+def get_question_and_answer(game_name: str) -> (str, str):
+    question, answer = '', ''
+    if game_name == 'brain-calc':
+        question, answer = calc_get_question_and_answer()
+    if game_name == 'brain-even':
+        question, answer = even_get_question_and_answer()
+    if game_name == 'brain-gcd':
+        question, answer = gcd_get_question_and_answer()
+    if game_name == 'brain-progression':
+        question, answer = progression_get_question_and_answer()
+    if game_name == 'brain-prime':
+        question, answer = prime_get_question_and_answer()
+    return question, answer
 
-
-question_and_answer = {
-        'brain-calc': calc_get_question_and_answer,
-        'brain-even': even_get_question_and_answer,
-        'brain-gcd': gcd_get_question_and_answer,
-        'brain-progression': progression_get_question_and_answer,
-        'brain-prime': prime_get_question_and_answer
-    }
 
 attempts_dict = {
     'brain-calc': -1,
@@ -66,5 +64,12 @@ attempts_dict = {
     'brain-prime': -1
 }
 
+rules = {
+    "brain-calc": 'What is the result of the expression?',
+    "brain-even": 'Answer "yes" if the number is even, otherwise answer "no".',
+    "brain-gcd": 'Find the greatest common divisor of given numbers.',
+    "brain-progression": 'What number is missing in the progression?',
+    "brain-prime": 'Answer "yes" if given number is prime. Otherwise answer "no"'
+}
 if __name__ == '__main__':
     pass
