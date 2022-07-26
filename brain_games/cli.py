@@ -32,7 +32,6 @@ def game_exit(user_name: str, win: bool):
 
 def game_play(game_name: str) -> bool:
     wins = 0
-    attempts = attempts_dict.get(game_name)
     while wins < 3:
         question, true_answer = question_and_answer[game_name]()
         print(f'Question: {question}')
@@ -41,12 +40,8 @@ def game_play(game_name: str) -> bool:
             wins += 1
             print('Correct!')
         else:
-            if attempts is not None:
-                attempts -= 1
-            wins = 0
             print(f"'{user_answer}' is wrong answer ;(."
                   f" Correct answer was '{true_answer}'.")
-        if attempts == 0:
             return False
     return True
 
@@ -63,13 +58,5 @@ rules = {
     "brain-prime": 'Answer "yes" if given number is prime. Otherwise answer "no"'
 }
 
-
-attempts_dict = {
-    'brain-gcd': 1,
-    'brain-progression': 1,
-    'brain-calc': 1,
-    'brain-even': 1,
-    'brain-prime': None
-}
 
 
