@@ -55,14 +55,18 @@ rules = {
 
 
 def get_question_and_answer(game_name):
-    question_and_answer = {
-        'brain-calc': calc_get_question_and_answer,
-        'brain-even': even_get_question_and_answer,
-        'brain-gcd': gcd_get_question_and_answer,
-        'brain-progression': progression_get_question_and_answer,
-        'brain-prime': prime_get_question_and_answer
-    }
-    return question_and_answer.get(game_name)()
+    question, answer = '', ''
+    if game_name == 'brain-calc':
+        question, answer = calc_get_question_and_answer()
+    if game_name == 'brain-gcd':
+        question, answer = gcd_get_question_and_answer()
+    if game_name == 'brain-even':
+        question, answer = even_get_question_and_answer()
+    if game_name == 'brain-progression':
+        question, answer = progression_get_question_and_answer()
+    if game_name == 'brain-prime':
+        question, answer = prime_get_question_and_answer()
+    return question, answer
 
 
 attempts_dict = {
