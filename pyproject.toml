@@ -1,7 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
 authors = ["Nickolay Kuzmin <nickolay.kuzmin2001@gmail.com>"]
 description = "Brain Games. 5 games for your brains: Even, Calculator, GCD, Progression, Prime"
 repository = "https://github.com/Neyghyw/python-project-lvl1"
