@@ -1,6 +1,6 @@
 import prompt
-from brain_games.utils.utils import rules
-from brain_games.utils.utils import question_and_answer
+from brain_games.utils.game_data import rules
+from brain_games.utils.game_data import question_and_answer
 
 
 def game_template_start(game_name: str):
