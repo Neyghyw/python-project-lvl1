@@ -4,10 +4,10 @@ import random
 RULES = 'What is the result of the expression?'
 
 
-def calc_get_question_and_answer() -> (str, str):
-    value1 = random.randint(1, 100)
-    value2 = random.randint(1, 100)
+def get_calc_question_and_answer() -> (str, str):
+    operand1 = random.randint(1, 100)
+    operand2 = random.randint(1, 100)
     operator = random.choice("+-*")
-    question = f'{value1} {operator} {value2}'
+    question = f'{operand1} {operator} {operand2}'
     answer = str(eval(question))
     return question, answer

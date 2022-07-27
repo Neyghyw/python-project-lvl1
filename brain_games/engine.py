@@ -3,13 +3,13 @@ from brain_games.utils.game_data import rules
 from brain_games.utils.game_data import question_and_answer
 
 
-def game_template_start(game_name: str):
-    user_name = game_start_introduction(game_name=game_name)
-    result = game_play(game_name=game_name)
-    game_exit(user_name=user_name, win=result)
+def start_game_template(game_name: str):
+    user_name = start_game_introduction(game_name=game_name)
+    game_result = play_game(game_name=game_name)
+    exit_game(user_name=user_name, is_win=game_result)
 
 
-def game_start_introduction(game_name: str) -> str:
+def start_game_introduction(game_name: str) -> str:
     print('Welcome to the Brain Games!')
     user_name = prompt.string("May I have your name? ")
     print(f'Hello, {user_name}!')
@@ -17,14 +17,7 @@ def game_start_introduction(game_name: str) -> str:
     return user_name
 
 
-def game_exit(user_name: str, win: bool):
-    if win:
-        print(f"Congratulations, {user_name}!")
-    else:
-        print(f"Let's try again, {user_name}!")
-
-
-def game_play(game_name: str) -> bool:
+def play_game(game_name: str) -> bool:
     wins = 0
     while wins < 3:
         question, true_answer = question_and_answer[game_name]()
@@ -37,6 +30,13 @@ def game_play(game_name: str) -> bool:
         wins += 1
         print('Correct!')
     return True
+
+
+def exit_game(user_name: str, is_win: bool):
+    if is_win:
+        print(f"Congratulations, {user_name}!")
+    else:
+        print(f"Let's try again, {user_name}!")
 
 
 if __name__ == '__main__':

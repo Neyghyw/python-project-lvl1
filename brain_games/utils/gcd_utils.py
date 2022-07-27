@@ -4,15 +4,15 @@ import random
 RULES = 'Find the greatest common divisor of given numbers.'
 
 
-def gcd_get_question_and_answer() -> (str, str):
-    value1 = random.randint(1, 100)
-    value2 = random.randint(1, 100)
-    start_position = min(value1, value2)
-    nod_range = range(start_position, 0, -1)
+def get_gcd_question_and_answer() -> (str, str):
+    number1 = random.randint(1, 100)
+    number2 = random.randint(1, 100)
+    start_position = min(number1, number2)
+    gcd_range = range(start_position, 0, -1)
     answer = 1
-    for num in nod_range:
-        if value1 % num == 0 and value2 % num == 0:
-            answer = str(num)
+    for divisor in gcd_range:
+        if number1 % divisor == 0 and number2 % divisor == 0:
+            answer = str(divisor)
             break
-    question = f'{value1} {value2}'
+    question = f'{number1} {number2}'
     return question, answer

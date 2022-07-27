@@ -1,8 +1,8 @@
-from brain_games.engine import game_template_start
+from brain_games.engine import start_game_template
 
 
 def main():
-    game_template_start("brain-prime")
+    start_game_template("brain-prime")
 
 
 if __name__ == "__main__":

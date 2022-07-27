@@ -6,11 +6,11 @@ from brain_games.utils import gcd_utils
 
 
 question_and_answer = {
-    'brain-calc': calc_utils.calc_get_question_and_answer,
-    'brain-even': even_utils.even_get_question_and_answer,
-    'brain-gcd': gcd_utils.gcd_get_question_and_answer,
-    'brain-progression': progression_utils.progression_get_question_and_answer,
-    'brain-prime': prime_utils.prime_get_question_and_answer
+    'brain-calc': calc_utils.get_calc_question_and_answer,
+    'brain-even': even_utils.get_even_question_and_answer,
+    'brain-gcd': gcd_utils.get_gcd_question_and_answer,
+    'brain-progression': progression_utils.get_progression_question_and_answer,
+    'brain-prime': prime_utils.get_prime_question_and_answer
 }
 
 
