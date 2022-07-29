@@ -1,12 +1,15 @@
 import random
 
 RULES = 'What number is missing in the progression?'
+RANGE_START = 1
+RANGE_END = 10
+PROGRESSION_LEN = 10
 
 
 def get_question_and_answer() -> (str, str):
-    progression_step = random.randint(1, 10)
-    first_num = random.randint(1, 50)
-    last_num = first_num + progression_step * (10 - 1)
+    progression_step = random.randint(RANGE_START, RANGE_END)
+    first_num = random.randint(RANGE_START, RANGE_END)
+    last_num = first_num + progression_step * (PROGRESSION_LEN - 1)
     question = ''
     for num in range(first_num, last_num, progression_step):
         question += f'{num} '
