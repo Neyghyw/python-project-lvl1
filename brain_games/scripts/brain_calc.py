@@ -1,10 +1,9 @@
 #!/usr/bin/env python
-from brain_games.engine import start_game_template
-from brain_games.games import calc_game
+from brain_games.games import game_engine, calc_game
 
 
 def main():
-    start_game_template(calc_game)
+    game_engine.start_game_template(calc_game)
 
 
 if __name__ == "__main__":
