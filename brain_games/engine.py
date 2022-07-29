@@ -1,26 +1,25 @@
+import types
 import prompt
-from brain_games.games.game_data import rules
-from brain_games.games.game_data import question_and_answer
 
 
-def start_game_template(game_name: str):
-    user_name = start_game_introduction(game_name=game_name)
-    game_result = play_game(game_name=game_name)
+def start_game_template(game_module: types.ModuleType):
+    user_name = start_game_introduction(game_module=game_module)
+    game_result = play_game(game_module=game_module)
     exit_game(user_name=user_name, is_win=game_result)
 
 
-def start_game_introduction(game_name: str) -> str:
+def start_game_introduction(game_module: types.ModuleType) -> str:
     print('Welcome to the Brain Games!')
     user_name = prompt.string('May I have your name? ')
     print(f'Hello, {user_name}!')
-    print(rules.get(game_name))
+    print(game_module.RULES)
     return user_name
 
 
-def play_game(game_name: str) -> bool:
+def play_game(game_module: types.ModuleType) -> bool:
     wins_count = 0
     while wins_count < 3:
-        question, true_answer = question_and_answer[game_name]()
+        question, true_answer = game_module.get_question_and_answer()
         print(f'Question: {question}')
         user_answer = prompt.string('Your answer: ')
         if not user_answer == true_answer:
