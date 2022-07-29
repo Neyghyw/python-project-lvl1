@@ -1,8 +1,8 @@
-from brain_games.utils import even_utils
-from brain_games.utils import calc_utils
-from brain_games.utils import prime_utils
-from brain_games.utils import progression_utils
-from brain_games.utils import gcd_utils
+from brain_games.games import even_utils
+from brain_games.games import calc_utils
+from brain_games.games import prime_utils
+from brain_games.games import progression_utils
+from brain_games.games import gcd_utils
 
 
 question_and_answer = {
