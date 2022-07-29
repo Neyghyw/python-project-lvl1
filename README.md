@@ -16,11 +16,11 @@ ______           _
 Для установки пакета запустите команду ```make build package-install```, находясь в корневой директории проекта
 После установки станут доступны команды для запуска игровых скриптов:
 ```
-### brain-even
-### brain-calc
-### brain-prime
-### brain-progression
-### brain-gcd
+brain-even
+brain-calc
+brain-prime
+brain-progression
+brain-gcd
 ```
 
 # Игра "Проверка на четность"
