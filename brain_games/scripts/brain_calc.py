@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from brain_games.engine import start_game_template
 
 
