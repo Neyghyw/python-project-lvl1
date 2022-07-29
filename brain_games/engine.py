@@ -11,32 +11,32 @@ def start_game_template(game_name: str):
 
 def start_game_introduction(game_name: str) -> str:
     print('Welcome to the Brain Games!')
-    user_name = prompt.string("May I have your name? ")
+    user_name = prompt.string('May I have your name? ')
     print(f'Hello, {user_name}!')
     print(rules.get(game_name))
     return user_name
 
 
 def play_game(game_name: str) -> bool:
-    wins = 0
-    while wins < 3:
+    wins_count = 0
+    while wins_count < 3:
         question, true_answer = question_and_answer[game_name]()
         print(f'Question: {question}')
-        user_answer = prompt.string("Your answer: ")
+        user_answer = prompt.string('Your answer: ')
         if not user_answer == true_answer:
-            print(f"'{user_answer}' is wrong answer ;(."
-                  f" Correct answer was '{true_answer}'.")
+            print(f'\'{user_answer}\' is wrong answer ;(.'
+                  f' Correct answer was \'{true_answer}\'.')
             return False
-        wins += 1
+        wins_count += 1
         print('Correct!')
     return True
 
 
 def exit_game(user_name: str, is_win: bool):
     if is_win:
-        print(f"Congratulations, {user_name}!")
+        print(f'Congratulations, {user_name}!')
     else:
-        print(f"Let's try again, {user_name}!")
+        print(f'Let\'s try again, {user_name}!')
 
 
 if __name__ == '__main__':
