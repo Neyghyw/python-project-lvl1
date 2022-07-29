@@ -12,8 +12,9 @@ ______           _
 <a href="https://codeclimate.com/github/Neyghyw/python-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/6b23f2878fd68f97a2b7/maintainability" /></a>
 [![Actions Status](https://github.com/Neyghyw/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Neyghyw/python-project-lvl1/actions)
 
-# Instructions
-Для установки пакета запустите команду ```make build package-install```, находясь в корневой директории проекта
+# Установка
+Установки пакета производится командой ```make build package-install```, находясь в корневой директории проекта
+
 После установки станут доступны команды для запуска игровых скриптов:
 ```
 brain-even
