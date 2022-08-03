@@ -15,7 +15,8 @@ def is_prime(number: int) -> bool:
     return True
 
 
-def get_question_and_answer() -> (str, str):
+def get_game_data() -> (str, str):
     question = random.randint(RANGE_START, RANGE_END)
     answer = is_prime(question) and 'yes' or 'no'
-    return str(question), answer
+    game_data = str(question), answer
+    return game_data

@@ -19,7 +19,7 @@ def start_game_introduction(game_module: types.ModuleType) -> str:
 def play_game(game_module: types.ModuleType) -> bool:
     wins_count = 0
     while wins_count < 3:
-        question, true_answer = game_module.get_question_and_answer()
+        question, true_answer = game_module.get_game_data()
         print(f'Question: {question}')
         user_answer = prompt.string('Your answer: ')
         if not user_answer == true_answer:

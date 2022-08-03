@@ -6,7 +6,7 @@ RANGE_END = 10
 PROGRESSION_LEN = 10
 
 
-def get_question_and_answer() -> (str, str):
+def get_game_data() -> (str, str):
     progression_step = random.randint(RANGE_START, RANGE_END)
     first_num = random.randint(RANGE_START, RANGE_END)
     last_num = first_num + progression_step * (PROGRESSION_LEN - 1)
@@ -16,4 +16,5 @@ def get_question_and_answer() -> (str, str):
     progression_tuple = question.rstrip().split(' ')
     answer = random.choice(progression_tuple)
     question = question.replace(answer, '..', 1)
-    return question, answer
+    game_data = question, answer
+    return game_data
