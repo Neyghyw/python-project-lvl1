@@ -1,6 +1,6 @@
 import random
 
-RULES = 'What number is missing in the progression?'
+DESCRIPTION = 'What number is missing in the progression?'
 RANGE_START = 1
 RANGE_END = 10
 PROGRESSION_LEN = 10
@@ -15,5 +15,5 @@ def get_question_and_answer() -> (str, str):
         question += f'{num} '
     progression_tuple = question.rstrip().split(' ')
     answer = random.choice(progression_tuple)
-    question = question.replace(answer, "..", 1)
+    question = question.replace(answer, '..', 1)
     return question, answer

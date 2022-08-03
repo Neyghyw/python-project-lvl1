@@ -12,7 +12,7 @@ def start_game_introduction(game_module: types.ModuleType) -> str:
     print('Welcome to the Brain Games!')
     user_name = prompt.string('May I have your name? ')
     print(f'Hello, {user_name}!')
-    print(game_module.RULES)
+    print(game_module.DESCRIPTION)
     return user_name
 
 

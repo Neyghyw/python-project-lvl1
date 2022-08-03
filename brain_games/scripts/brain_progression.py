@@ -6,5 +6,5 @@ def main():
     engine.start_game_template(games.progression)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
