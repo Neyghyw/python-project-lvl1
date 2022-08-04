@@ -26,20 +26,20 @@ brain-gcd
 
 # Игра "Проверка на четность"
 
-[![asciicast](https://asciinema.org/a/4ZFmpkEnmPiOY7L2bxToojmlu.svg)](https://asciinema.org/a/4ZFmpkEnmPiOY7L2bxToojmlu)
+[![asciicast](https://asciinema.org/a/dlN5krkwG2yMM8M92E5AwEa9Q.svg)](https://asciinema.org/a/dlN5krkwG2yMM8M92E5AwEa9Q)
 
 # Игра "Калькулятор"
 
-[![asciicast](https://asciinema.org/a/iGmKVdPd242z4Xu8qg48OEsmC.svg)](https://asciinema.org/a/iGmKVdPd242z4Xu8qg48OEsmC)
+[![asciicast](https://asciinema.org/a/VfUXoftVRpGTwcuEiu7NnGO39.svg)](https://asciinema.org/a/VfUXoftVRpGTwcuEiu7NnGO39)
 
 # Игра "Простое ли число?"
 
-[![asciicast](https://asciinema.org/a/1zmgJUVaQvjcEPEOUNHteVO5i.svg)](https://asciinema.org/a/1zmgJUVaQvjcEPEOUNHteVO5i)
+[![asciicast](https://asciinema.org/a/512548.svg)](https://asciinema.org/a/512548)
 
 # Игра "Арифметическая прогрессия"
 
-[![asciicast](https://asciinema.org/a/aAjzmIIJ7JpRONZmAmP7G3zvd.svg)](https://asciinema.org/a/aAjzmIIJ7JpRONZmAmP7G3zvd)
+[![asciicast](https://asciinema.org/a/512549.svg)](https://asciinema.org/a/512549)
 
 # Игра "Нахождение НОД"
 
-[![asciicast](https://asciinema.org/a/lSYz0FujXhzNmjEUwWlQw7Kj2.svg)](https://asciinema.org/a/lSYz0FujXhzNmjEUwWlQw7Kj2)
+[![asciicast](https://asciinema.org/a/512550.svg)](https://asciinema.org/a/512550)
