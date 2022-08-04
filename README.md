@@ -13,7 +13,7 @@ ______           _
 [![Actions Status](https://github.com/Neyghyw/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Neyghyw/python-project-lvl1/actions)
 
 # Установка
-Установки пакета производится командой ```make build package-install```, находясь в корневой директории проекта
+Установка пакета производится командой ```make build package-install```, находясь в корневой директории проекта
 
 После установки станут доступны команды для запуска игровых скриптов:
 ```
